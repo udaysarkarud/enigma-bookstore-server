@@ -5,8 +5,13 @@
   "author": "Uday Sarkar",
   "license": "MIT",
   "devDependencies": {
+    "@types/cors": "^2.8.13",
+    "@types/express": "^4.17.17",
     "ts-node-dev": "^2.0.0",
     "typescript": "^5.1.6"
+  },
+  "scripts": {
+    "start": "ts-node-dev --respawn --transpile-only ./src/server.ts"
   },
   "dependencies": {
     "cors": "^2.8.5",
