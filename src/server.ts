@@ -1,16 +1,19 @@
-import express from "express";
-import cors from "cors";
-const app = express();
-app.use(cors());
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+import { connect } from "mongoose";
+import app from "./app";
+import configEnv from "./config";
 
-const port = 5000;
+async function main() {
+  try {
+    await connect(
+      "mongodb+srv://user_enigbo-db:CWHUUHT3XvmdQgf5@cluster0.x6o4r.mongodb.net/?retryWrites=true&w=majority"
+    );
 
-app.get("/", (req, res) => {
-  res.send("Hello World!");
-});
+    app.listen(configEnv.port, () => {
+      console.log(`Example app listening on port ${configEnv.port}`);
+    });
+  } catch (error) {
+    console.log(error);
+  }
+}
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
-});
+main();
