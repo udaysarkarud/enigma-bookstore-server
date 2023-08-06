@@ -5,7 +5,7 @@ import configEnv from "./config";
 async function main() {
   try {
     await connect(
-      "mongodb+srv://user_enigbo-db:CWHUUHT3XvmdQgf5@cluster0.x6o4r.mongodb.net/?retryWrites=true&w=majority"
+      "mongodb+srv://user_enigbo-db:CWHUUHT3XvmdQgf5@cluster0.x6o4r.mongodb.net/enigma-bookstore?retryWrites=true&w=majority"
     );
 
     app.listen(configEnv.port, () => {
